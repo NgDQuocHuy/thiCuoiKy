@@ -12,15 +12,24 @@
     <script>
         function ptBac2(a, b, c) {
             let x = (b*b) - (4*a*c);
+            if (a == 0 && b == 0 && c == 0) {
+                return alert("Phương trình vô số nghiệm");
+            }
+            if (a == 0 && b == 0) {
+                return alert("Phương trình không xác định");
+            }
+            if (a == 0 && b != 0) {
+                return alert("Phương trình có 1 nghiệm" (-c)/b);
+            }
             if (x < 0) {
-                alert("Phương trình vô nghiệm")
+                return alert("Phương trình vô nghiệm")
             } else if (x == 0) {
                 x1 = x2 = - b/2*a;
-                alert("Phương trình có nghiệm kép" + x1 + "'" + x2);  
+                return alert("Phương trình có nghiệm kép" + x1 + "'" + x2);  
             } else {
                 let x1 = ((-b) + Math.sqrt(x)) / (2*a);
                 let x2 = ((-b) - Math.sqrt(x)) / (2*a);
-                alert("Phương trình có 2 nghiệm phân biêt"+ x1 + "và" + x2);
+                return alert("Phương trình có 2 nghiệm phân biêt"+ x1 + "và" + x2);
             }
         }
         ptBac2(8, 12, -20);
