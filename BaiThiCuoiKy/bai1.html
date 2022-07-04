@@ -10,23 +10,26 @@
         <input type="number" placeholder="nhập số a" id="numberA">
         <input type="number" placeholder="nhập số b" id="numberB">
         <input type="number" placeholder="nhập số c" id="numberC">
-        <button onclick="result()">Result</button>
+        <button onclick="checkNumber()">Result</button>
     <script>
-
-        function result() {
+        function checkNumber() {
             let a = Number(document.getElementById("numberA").value);
             let b = Number(document.getElementById("numberB").value);
             let c = Number(document.getElementById("numberC").value);
-
-            const x = (b*b) - (4*a*(c));
-
             if (a == 0 && b == 0 && c == 0) {
                 return alert("Phương trình vô số nghiệm");
-            } else if (a == 0 && b == 0) {
+            } else if
+            (a == 0 && b == 0) {
                 return alert("Phương trình không xác định");
-            } else if (a == 0 && b != 0) {
-                return alert("Phương trình có 1 nghiệm" (-c)/b);
-            } else if (x < 0) {
+            } else if (a == 0 & b !== 0) {
+                return alert("Phương trình có 1 nghiệm" + (-c)/b);
+            }
+            result(a, b, c)
+        }
+
+        function result(a, b, c) {
+            const x = (b*b) - (4*a*(c));
+            if (x < 0) {
                 return alert("Phương trình vô nghiệm")
             } else if (x == 0) {
                 x1 = x2 = - b/2*a;
